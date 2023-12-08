@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "2b0fccb4-1f85-44d8-a73c-89f55f25c543",
+		"name": "Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20086938"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/personas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"primerNombre\": \"Carlos\",\r\n    \"segundoNombre\": \"Andres\",\r\n    \"primerApellido\": \"Martin\",\r\n    \"segundoApellido\": \"Castro\",\r\n    \"documento\": 1597532157,\r\n    \"tipoDocumento\" : {\"id\": 1},\r\n    \"telefono\": 3126587458,\r\n    \"direccion\": \"Calle 98 No 36 - 48\",\r\n    \"ciudad\": \"Pasto\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tipo-documento",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 0,\r\n    \"tipo\" : \"C\",\r\n    \"descripcion\" : \"Cedula\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tipo-documento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tipo-documento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/personas/buscar?tipo=C&documento=23445322",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personas/buscar?tipo=C&documento=23445322",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"buscar"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "C"
+						},
+						{
+							"key": "documento",
+							"value": "23445322"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/personas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
